@@ -9,11 +9,23 @@ import {HttpClientModule} from '@angular/common/http';
 import {RouterModule, Routes} from '@angular/router';
 import { NoteEditComponent } from './note-edit/note-edit.component';
 import { WelcomeComponent } from './welcome/welcome.component';
+import { AllNotesComponent } from './all-notes/all-notes.component';
+import { DeleteNoteComponent } from './delete-note/delete-note.component';
 const appRoutes: Routes = [
   {
     path: 'notes-create',
     component: NoteCreateComponent,
     data: { title: 'Note Create' }
+  },
+  {
+    path: 'notes-delete',
+    component: DeleteNoteComponent,
+    data: { title: 'Note Delete' }
+  },
+  {
+    path: 'notes',
+    component: AllNotesComponent,
+    data: { title: 'Notes' }
   },
   {
     path: 'notes-edit',
@@ -35,7 +47,9 @@ const appRoutes: Routes = [
     AppComponent,
     NoteCreateComponent,
     NoteEditComponent,
-    WelcomeComponent
+    WelcomeComponent,
+    AllNotesComponent,
+    DeleteNoteComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
