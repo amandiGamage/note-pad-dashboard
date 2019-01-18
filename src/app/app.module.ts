@@ -3,10 +3,12 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { AlertModule } from 'ngx-bootstrap';
+import { NoteCreateComponent } from './note-create/note-create.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    NoteCreateComponent
   ],
   imports: [
     AlertModule.forRoot(),
