@@ -1,0 +1,11 @@
+<div>
+  <ul class="products">
+    <li *ngFor="let n of notes; let i=index;">
+      <a routerLink="/notes/{{n.id}}">
+        <span class="badge">{{i+1}}</span> {{n.title}}
+        {{n.body}} {{n.createdDate}}
+      </a>
+      <button (click)="deleteNote(n.id)">x</button>
+    </li>
+  </ul>
+</div>

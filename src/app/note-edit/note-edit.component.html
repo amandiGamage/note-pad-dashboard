@@ -1,0 +1,13 @@
+<div class="form-group">
+  <div class="form-group col-md-2"><input type="text" [(ngModel)]="searchId" class="form-control"><br>
+    <button class="btn btn-primary" (click)="searchNoteById()">Search Note by id</button>
+  </div>
+  <h2 class="header">Title</h2>
+  <input type="text" [(ngModel)]="NoteData.title"  class="form-control" id="title-txt">
+</div>
+<div class="form-group">
+  <h2 class="header">Note</h2>
+  <textarea class="form-control" [(ngModel)]="NoteData.body"  rows="5" id="comment"></textarea>
+  <label>Created Date : {{NoteData.createdDate}}</label>
+  <button class="btn btn-dark" id="submit">Update</button>
+</div>
