@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {NoteService} from '../Services/note.service';
 
 @Component({
   selector: 'app-delete-note',
@@ -6,10 +7,24 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./delete-note.component.css']
 })
 export class DeleteNoteComponent implements OnInit {
-
-  constructor() { }
+  notes: any;
+  constructor(public noteService: NoteService) { }
 
   ngOnInit() {
+    this.getAllNotes();
   }
-
+  getAllNotes() {
+    this.notes = [];
+    this.noteService.getNotes().subscribe((data: {}) => {
+      console.log(data);
+      this.notes = data;
+    });
+  }
+    deleteN(id) {
+      this.noteService.deleteNote(id).subscribe(res => {
+        }, (err) => {
+          console.log(err);
+        }
+      );
+    }
 }
