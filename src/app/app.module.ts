@@ -8,6 +8,7 @@ import {FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import {RouterModule, Routes} from '@angular/router';
 import { NoteEditComponent } from './note-edit/note-edit.component';
+import { WelcomeComponent } from './welcome/welcome.component';
 const appRoutes: Routes = [
   {
     path: 'notes-create',
@@ -15,20 +16,26 @@ const appRoutes: Routes = [
     data: { title: 'Note Create' }
   },
   {
-    path: 'notes-edit/:id',
+    path: 'notes-edit',
     component: NoteEditComponent,
     data: { title: 'Note Edit' }
   },
-  /*{ path: '',
+  {
+    path: 'welcome',
+    component: WelcomeComponent,
+    data: { title: 'welcome to app' }
+  },
+  { path: '',
     redirectTo: '/welcome',
     pathMatch: 'full'
-  }*/
+  }
 ];
 @NgModule({
   declarations: [
     AppComponent,
     NoteCreateComponent,
-    NoteEditComponent
+    NoteEditComponent,
+    WelcomeComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
