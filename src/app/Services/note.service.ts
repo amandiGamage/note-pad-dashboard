@@ -3,7 +3,7 @@ import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http
 import { Observable, of } from 'rxjs';
 import { map, catchError, tap } from 'rxjs/operators';
 
-const endpoint = 'http://localhost:8080/api/inshap.com/v1/';
+const endpoint = 'http://localhost:8080/api.notepad.com/v1/';
 const httpOptions = {
   headers: new HttpHeaders({
     'Content-Type':  'application/json'
@@ -29,8 +29,8 @@ export class NoteService {
   addNote (note): Observable<any> {
     console.log(note);
     return this.http.post<any>(endpoint + 'notes', JSON.stringify(note), httpOptions).pipe(
-      tap((product) => console.log(`added Notes w/ id=${note.id}`)),
-      catchError(this.handleError<any>('addNote'))
+      tap((a) => alert(a.message)),
+      catchError(this.handleError<any>('Note'))
     );
   }
 
@@ -50,7 +50,7 @@ export class NoteService {
   private handleError<T> (operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
       console.error(error); // log to console instead
-      console.log(`${operation} failed: ${error.message}`);
+      alert(`${operation} failed: ${error.message}`);
 
       // Let the app keep running by returning an empty result.
       return of(result as T);

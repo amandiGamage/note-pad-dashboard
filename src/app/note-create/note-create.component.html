@@ -1,9 +1,9 @@
 <div class="form-group">
   <h2 class="header">Title</h2>
-  <input type="text" class="form-control" id="title-txt">
+  <input [(ngModel)]="NoteData.title" type="text" class="form-control" id="title-txt">
 </div>
 <div class="form-group">
   <h2 class="header">Note</h2>
-  <textarea class="form-control" rows="5" id="comment"></textarea>
-  <button class="btn btn-dark" id="submit">Submit</button>
+  <textarea [(ngModel)]="NoteData.body" class="form-control" rows="5" id="comment"></textarea>
+  <button class="btn btn-dark" id="submit" (click)="postNote()">Post</button>
 </div>
