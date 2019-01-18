@@ -6,7 +6,7 @@ import { AlertModule } from 'ngx-bootstrap';
 import { NoteCreateComponent } from './note-create/note-create.component';
 import {FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
-import {Routes} from '@angular/router';
+import {RouterModule, Routes} from '@angular/router';
 import { NoteEditComponent } from './note-edit/note-edit.component';
 const appRoutes: Routes = [
   {
@@ -31,6 +31,7 @@ const appRoutes: Routes = [
     NoteEditComponent
   ],
   imports: [
+    RouterModule.forRoot(appRoutes),
     AlertModule.forRoot(),
     BrowserModule,
     FormsModule,
