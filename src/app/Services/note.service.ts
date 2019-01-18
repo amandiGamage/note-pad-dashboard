@@ -36,7 +36,7 @@ export class NoteService {
 
   updateNote (id, note): Observable<any> {
     return this.http.put(endpoint + 'notes/' + id, JSON.stringify(note), httpOptions).pipe(
-      tap(_ => console.log(`updated notes id=${id}`)),
+      tap(_ => alert(`updated notes id=${id}`)),
       catchError(this.handleError<any>('updateNote'))
     );
   }
