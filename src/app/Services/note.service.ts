@@ -17,8 +17,7 @@ export class NoteService {
   constructor(private http: HttpClient) { }
 
   getNotes(): Observable<any> {
-    return this.http.get(endpoint + 'notes').pipe(
-      map(this.extractData));
+    return this.http.get(endpoint + 'notes' + '?offset=0&&limit=10');
   }
 
   getNote(id): Observable<any> {

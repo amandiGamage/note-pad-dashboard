@@ -1,3 +1,8 @@
-<p>
-  all-notes works!
-</p>
+<ul>
+  <li *ngFor="let note of notes">
+    {{ note.id }}<br>
+    {{ note.title }}<br>
+    {{ note.body }}<br>
+    {{ note.createdTime }}<br>
+  </li>
+</ul>
